@@ -64,7 +64,7 @@ proc download(s: string, dir: string = getCurrentDir()) =
 
   var tmp = mktemp()
   downloadFile(SUBSCENE_BASE_URL & url, tmp)
-  var z: TZipArchive
+  var z: ZipArchive
   if z.open(tmp):
     for s in z.walkFiles:
       #if s.endsWith(".srt"):
